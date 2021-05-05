@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-<title>Online payments</title>
+<title>Online Payments</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -15,7 +15,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: tomato">
 			<div>
-				<a href="https://www.javaguides.net" class="navbar-brand"> User Management App </a>
+				<a href="https://www.javaguides.net" class="navbar-brand"> Online Payments </a>
 			</div>
 
 			<ul class="navbar-nav">
@@ -51,21 +51,27 @@
 				</c:if>
 
 				<fieldset class="form-group">
-					<label>User th n</label> <input type="text"
+					<label>User Account Number</label> <input type="text"
+						value="<c:out value='${user.accountNumber}' />" class="form-control"
+						name="accountNumber" required="required">
+				</fieldset>
+
+				<fieldset class="form-group">
+					<label>User name</label> <input type="text"
 						value="<c:out value='${user.name}' />" class="form-control"
-						name="name" required="required">
+						name="name">
 				</fieldset>
 
 				<fieldset class="form-group">
-					<label>User Email</label> <input type="text"
-						value="<c:out value='${user.email}' />" class="form-control"
-						name="email">
+					<label>phone number</label> <input type="text"
+						value="<c:out value='${user.phoneNumber}' />" class="form-control"
+						name="phoneNumber">
 				</fieldset>
-
+				
 				<fieldset class="form-group">
-					<label>User Country</label> <input type="text"
-						value="<c:out value='${user.country}' />" class="form-control"
-						name="country">
+					<label>district</label> <input type="text"
+						value="<c:out value='${user.district}' />" class="form-control"
+						name="district">
 				</fieldset>
 
 				<button type="submit" class="btn btn-success">Save</button>

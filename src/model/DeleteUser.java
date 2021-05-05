@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DeleteUser {
 
 	
-	private String jdbcURL = "jdbc:mysql://localhost:3306/demo?useSSL=false";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/online_payments?useSSL=false";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "abc123";
 	
@@ -18,7 +18,7 @@ public class DeleteUser {
 	protected Connection getConnection() {
 		Connection connection = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -30,7 +30,7 @@ public class DeleteUser {
 		return connection;
 	}
 	
-	private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
+	private static final String DELETE_USERS_SQL = "delete from user_detail where id = ?;";
 	
 	public boolean deleteUser(int id) throws SQLException {
 		boolean rowDeleted;

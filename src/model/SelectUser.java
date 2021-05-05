@@ -8,14 +8,14 @@ import java.sql.SQLException;
 
 public class SelectUser {
 
-	private String jdbcURL = "jdbc:mysql://localhost:3306/demo?useSSL=false";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/online_payments?useSSL=false";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "abc123";
 
 	protected Connection getConnection() {
 		Connection connection = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -27,7 +27,7 @@ public class SelectUser {
 		return connection;
 	}
 	
-	private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
+	private static final String SELECT_USER_BY_ID = "select id,accountNumber,name,phoneNumber,district from user_detail where id =?";
 	
 	public User selectUser(int id) {
 		User user = null;
@@ -42,10 +42,12 @@ public class SelectUser {
 
 			// Step 4: Process the ResultSet object.
 			while (rs.next()) {
+				
+				String accountNumber = rs.getString("accountNumber");
 				String name = rs.getString("name");
-				String email = rs.getString("email");
-				String country = rs.getString("country");
-				user = new User(id, name, email, country);
+				String phoneNumber = rs.getString("phoneNumber");
+				String district = rs.getString("district");
+				user = new User(id,accountNumber,name,phoneNumber,district);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);

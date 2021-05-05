@@ -12,7 +12,7 @@ public class GetUsers {
 	
 	
 	
-	private String jdbcURL = "jdbc:mysql://localhost:3306/demo?useSSL=false";
+	private String jdbcURL = "jdbc:mysql://localhost:3306/online_payments?useSSL=false";
 	private String jdbcUsername = "root";
 	private String jdbcPassword = "abc123";
 
@@ -20,7 +20,7 @@ public class GetUsers {
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -32,16 +32,15 @@ public class GetUsers {
 		return connection;
 	}
 	
-	private static final String SELECT_ALL_USERS = "select * from users";
+	private static final String SELECT_ALL_USERS = "select * from user_detail";
 
 	public List<User> selectAllUsers() {
 
-		// using try-with-resources to avoid closing resources (boiler plate code)
 		List<User> users = new ArrayList<>();
-		// Step 1: Establishing a Connection
+		//Establishing a Connection
 		try (Connection connection = getConnection();
 
-				// Step 2:Create a statement using connection object
+				//Create a statement using connection object
 			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
@@ -50,10 +49,12 @@ public class GetUsers {
 			// Step 4: Process the ResultSet object.
 			while (rs.next()) {
 				int id = rs.getInt("id");
+				String accountNumber=rs.getString("accountNumber");
 				String name = rs.getString("name");
-				String email = rs.getString("email");
-				String country = rs.getString("country");
-				users.add(new User(id, name, email, country));
+				String phoneNumber = rs.getString("phoneNumber");
+				String district = rs.getString("district");
+				users.add(new User(id,accountNumber,name,phoneNumber,district));
+
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
