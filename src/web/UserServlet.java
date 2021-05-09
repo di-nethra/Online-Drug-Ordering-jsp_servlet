@@ -1,25 +1,19 @@
 package web;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.*;
+
 /**
  * Servlet implementation class UserServlet
  */
 @WebServlet("/")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CreateUser CreateUser=new CreateUser();
-	private GetUsers GetUsers=new GetUsers();
-	private SelectUser SelectUser=new SelectUser();
-	private DeleteUser DeleteUser=new DeleteUser();
-	private UpdateUser UpdateUser=new UpdateUser();
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -32,7 +26,7 @@ public class UserServlet extends HttpServlet {
 		try {
 			switch (action) {
 			case "/new":
-				showNewForm(request, response);
+				ShowNewForm(request, response);
 				break;
 			case "/insert":
 				insertUser(request, response);
@@ -54,56 +48,41 @@ public class UserServlet extends HttpServlet {
 			throw new ServletException(ex);
 		}
 	}
+	private void ShowNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ShowNewFormServlet");
+		dispatcher.forward(request, response);
+		
+	}
 	private void listUser(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		List<User> listUser = GetUsers.selectAllUsers();
-		request.setAttribute("listUser", listUser);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ListUserServlet");
 		dispatcher.forward(request, response);
 	}
-	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
-		dispatcher.forward(request, response);
-	}
+
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		User existingUser = SelectUser.selectUser(id);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
-		request.setAttribute("user", existingUser);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ShowEditFormServlet");
 		dispatcher.forward(request, response);
 	}
 	private void insertUser(HttpServletRequest request, HttpServletResponse response) 
-			throws SQLException, IOException {
-		try {
+			throws SQLException, IOException, ServletException {
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("InsertUserServlet");
+		dispatcher.forward(request, response);
 	
-		String accountNum = request.getParameter("accountNumber");
-		String name = request.getParameter("name");
-		String phoneNum = request.getParameter("phoneNumber");
-		String district = request.getParameter("district");
-		User newUser = new User(accountNum,name,phoneNum,district);
-		CreateUser.insertUser(newUser);
-		response.sendRedirect("list");
-		}catch(Exception e){
-			System.out.println("meka thamai error eka:"+e);
-		}
 	}
 	private void updateUser(HttpServletRequest request, HttpServletResponse response) 
-			throws SQLException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		String accountNum = request.getParameter("accountNumber");
-		String name = request.getParameter("name");
-		String phoneNum =request.getParameter("phoneNumber");
-		String district = request.getParameter("district");
-		User newUser = new User(id,accountNum,name,phoneNum,district);
-		UpdateUser.updateUser(newUser);
-		response.sendRedirect("list");
+			throws SQLException, IOException, ServletException {
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("UpadateUserServlet");
+		dispatcher.forward(request, response);
+		
 	}
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response) 
-			throws SQLException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		DeleteUser.deleteUser(id);
-		response.sendRedirect("list");
+			throws SQLException, IOException, ServletException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("DeleteUserServlet");
+		dispatcher.forward(request, response);
 	}
 }

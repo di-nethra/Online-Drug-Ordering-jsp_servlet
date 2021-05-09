@@ -1,32 +1,15 @@
 package model;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SelectUser {
+import dao.PaymentDbConnection;
 
-	private String jdbcURL = "jdbc:mysql://localhost:3306/online_payments?useSSL=false";
-	private String jdbcUsername = "root";
-	private String jdbcPassword = "abc123";
+public class SelectUser extends PaymentDbConnection {
 
-	protected Connection getConnection() {
-		Connection connection = null;
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return connection;
-	}
-	
+
 	private static final String SELECT_USER_BY_ID = "select id,accountNumber,name,phoneNumber,district from user_detail where id =?";
 	
 	public User selectUser(int id) {

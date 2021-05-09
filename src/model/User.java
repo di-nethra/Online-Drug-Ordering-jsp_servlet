@@ -12,7 +12,6 @@ public class User {
 		
 	}
 	
-
 	public User(int id,String accountNumber,String name, String phoneNumber, String district) {
 	
 		this.id = id;
