@@ -8,6 +8,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	
+
 </head>
 <body>
 
@@ -18,10 +20,9 @@
 				<a href="#" class="navbar-brand"> Online Payments </a>
 			</div>
 
-			<ul class="navbar-nav">
-				<li><a href="<%=request.getContextPath()%>/list"
-					class="nav-link">Users</a></li>
-			</ul>
+			
+			
+			
 		</nav>
 	</header>
 	<br>
@@ -79,6 +80,11 @@
 			</div>
 		</div>
 	</div>
+	
+			<ul class="admin" style="text-align:center; margin-top:80px;">
+				
+				<li><a href="AdminLogin.jsp">View Users(!!!For administrative purposes only!!! )</a></li>
+			</ul>
 	
 </body>
 </html>

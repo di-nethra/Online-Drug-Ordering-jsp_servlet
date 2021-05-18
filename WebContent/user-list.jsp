@@ -72,7 +72,7 @@
 	
 	
 	   <nav class="navbar navbar-expand-lg navbar-dark bg-tild ">
-  <img class="logo" src="suwasetha2.png" />
+  <img class="logo" src="G:\jsp_servlets\Online Drug Ordering System\WebContent\suwasetha2.png">
     <a href="" class="title navbar-brand font-weight-bold">Suwasetha</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#target1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toogle Navbar" >
         <span class="navbar-toggler-icon"></span>
@@ -93,7 +93,7 @@
    </nav>
 		<nav class="navbar navbar-dark bg-warning">
 			<div>
-				<a href="https://www.javaguides.net" class="navbar-brand font-weight-bold"> Online Payments </a>
+				<a href="" class="navbar-brand font-weight-bold"> Online Payments </a>
 			</div>
 
 			<ul class="navbar-nav">
