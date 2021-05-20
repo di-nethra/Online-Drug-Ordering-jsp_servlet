@@ -32,13 +32,20 @@ public class ListUserServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		try {
 		List<User> listUser = GetUsers.selectAllUsers();
 		request.setAttribute("listUser", listUser);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
 		dispatcher.forward(request, response);
+		}catch(Exception e) {
+			System.out.println("list user error");
+			
+		}
 	}
+    
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

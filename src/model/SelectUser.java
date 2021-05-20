@@ -10,7 +10,7 @@ import dao.PaymentDbConnection;
 public class SelectUser extends PaymentDbConnection {
 
 
-	private static final String SELECT_USER_BY_ID = "select id,accountNumber,name,phoneNumber,district from user_detail where id =?";
+	private static final String SELECT_USER_BY_ID = "select id,accountNumber,name,phoneNumber,cvc,expDate,amount from user_detail where id =?";
 	
 	public User selectUser(int id) {
 		User user = null;
@@ -29,8 +29,10 @@ public class SelectUser extends PaymentDbConnection {
 				String accountNumber = rs.getString("accountNumber");
 				String name = rs.getString("name");
 				String phoneNumber = rs.getString("phoneNumber");
-				String district = rs.getString("district");
-				user = new User(id,accountNumber,name,phoneNumber,district);
+				String cvc = rs.getString("cvc");
+				String expDate = rs.getString("expDate");
+				int amount = rs.getInt("amount");
+				user = new User(id,accountNumber,name,phoneNumber,cvc,expDate,amount);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);

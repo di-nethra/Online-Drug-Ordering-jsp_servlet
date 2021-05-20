@@ -29,13 +29,18 @@ public class GetUsers extends PaymentDbConnection {
 			ResultSet rs = preparedStatement.executeQuery();
 
 			// Step 4: Process the ResultSet object.
-			while (rs.next()) {
+			while (rs.next()) {try {
 				int id = rs.getInt("id");
 				String accountNumber=rs.getString("accountNumber");
 				String name = rs.getString("name");
 				String phoneNumber = rs.getString("phoneNumber");
-				String district = rs.getString("district");
-				users.add(new User(id,accountNumber,name,phoneNumber,district));
+				String cvc = rs.getString("cvc");
+				String expDate = rs.getString("expDate");
+				int amount = rs.getInt("amount");
+				users.add(new User(id,accountNumber,name,phoneNumber,cvc,expDate,amount));
+			}catch(Exception e) {
+				System.out.println("get users error");
+			}
 
 			}
 		} catch (SQLException e) {

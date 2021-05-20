@@ -21,8 +21,6 @@
 			</div>
 
 			
-			
-			
 		</nav>
 	</header>
 	<br>
@@ -42,7 +40,7 @@
             			Edit User
             		</c:if>
 						<c:if test="${user == null}">
-            			Add New User
+            			Payment Information
             		</c:if>
 					</h2>
 				</caption>
@@ -70,10 +68,24 @@
 				</fieldset>
 				
 				<fieldset class="form-group">
-					<label>district</label> <input type="text"
-						value="<c:out value='${user.district}' />" class="form-control"
-						name="district">
+					<label>CVC</label> <input type="text"
+						value="<c:out value='${user.cvc}' />" class="form-control"
+						name="cvc">
 				</fieldset>
+				
+				<fieldset class="form-group">
+					<label>Expiration Date</label> <input type="text"
+						value="<c:out value='${user.expDate}' />" class="form-control"
+						name="expDate">
+				</fieldset>
+				
+				<fieldset class="form-group">
+					<label>Payment Amount</label> <input type="text"
+						value="<c:out value='${user.amount}' />" class="form-control"
+						name="amount">
+				</fieldset>
+				
+				
 
 				<button type="submit" class="btn btn-success">Save</button>
 				</form>

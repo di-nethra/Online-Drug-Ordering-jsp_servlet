@@ -8,8 +8,8 @@ import dao.PaymentDbConnection;
 public class CreateUser extends PaymentDbConnection  {
 	
 	
-	private static final String INSERT_USERS_SQL = "INSERT INTO user_detail" + " (accountNumber,name,phoneNumber,district) VALUES "
-			+ " (?,?,?,?);";
+	private static final String INSERT_USERS_SQL = "INSERT INTO user_detail" + " (accountNumber,name,phoneNumber,cvc,expDate,amount) VALUES "
+			+ " (?,?,?,?,?,?);";
 	
 
 	public void insertUser(User user) throws SQLException {
@@ -18,10 +18,13 @@ public class CreateUser extends PaymentDbConnection  {
 		try (Connection connection = getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
 			
-			preparedStatement.setString(1,user.getAccountNum());
+			preparedStatement.setString(1,user.getAccountNumber());
 			preparedStatement.setString(2,user.getName());
 			preparedStatement.setString(3,user.getPhoneNumber());
-			preparedStatement.setString(4,user.getDistrict());
+			preparedStatement.setString(4,user.getCvc());
+			preparedStatement.setString(5,user.getExpDate());
+			preparedStatement.setInt(6,user.getAmount());
+			
 			System.out.println("this is from create user:"+preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {

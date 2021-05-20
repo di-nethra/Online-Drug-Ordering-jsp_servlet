@@ -35,8 +35,11 @@ public class InsertUserServlet extends HttpServlet {
 			String accountNum = request.getParameter("accountNumber");
 			String name = request.getParameter("name");
 			String phoneNum = request.getParameter("phoneNumber");
-			String district = request.getParameter("district");
-			User newUser = new User(accountNum,name,phoneNum,district);
+			String cvc =request.getParameter("cvc");
+			String expDate = request.getParameter("expDate");
+			int amount =Integer.parseInt (request.getParameter("amount"));
+			User newUser = new User(accountNum,name,phoneNum,cvc,expDate,amount);
+			
 			CreateUser.insertUser(newUser);
 			response.sendRedirect("list");
 			}catch(Exception e){

@@ -119,20 +119,26 @@
 						<th>Account Number</th>
 						<th>Name</th>
 						<th>Phone Number</th>
-						<th>District</th>
+						<th>CVC</th>
+						<th>Expiration Date</th>
+						<th>Payment Amount</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 				
-					<c:forEach var="user" items="${listUser}">
+					<c:forEach  items="${listUser}" var="user">
 
 						<tr>
 							<td><c:out value="${user.id}" /></td>
 							<td><c:out value="${user.accountNumber}" /></td>
 							<td><c:out value="${user.name}" /></td>
 							<td><c:out value="${user.phoneNumber}" /></td>
-							<td><c:out value="${user.district}" /></td>
+								<td><c:out value="${user.cvc}" /></td>
+							<td><c:out value="${user.expDate}" /></td>
+							<td><c:out value="${user.amount}" /></td>
+							
+						
 							<td><a href="edit?id=<c:out value='${user.id}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
 								href="delete?id=<c:out value='${user.id}' />">Delete</a></td>
@@ -140,7 +146,7 @@
 						
 					
 					</c:forEach>
-					<!-- } -->
+					
 				</tbody>
 
 			</table>
@@ -207,10 +213,10 @@
                 <a href="#" class="text-white">Personal Care</a>
               </li>
               <li>
-                <a href="#" class="text-white">Mother & Baby</a>
+                <a href="#" class="text-white">Mother and Baby</a>
               </li>
               <li>
-                <a href="#" class="text-white">Cosmetics & Fragrances</a>
+                <a href="#" class="text-white">Cosmetics and Fragrances</a>
               </li>
             </ul>
           </div>
