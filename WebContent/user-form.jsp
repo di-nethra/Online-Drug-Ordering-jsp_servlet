@@ -35,13 +35,11 @@
 				</c:if>
 
 				<caption>
+				
 					<h2>
-						<c:if test="${user != null}">
-            			Edit User
-            		</c:if>
-						<c:if test="${user == null}">
+						
             			Payment Information
-            		</c:if>
+            		
 					</h2>
 				</caption>
 

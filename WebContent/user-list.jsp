@@ -108,7 +108,7 @@
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}></div> -->
 
 		<div class="container">
-			<h3 class="text-center">User Details</h3>
+			<h3 class="text-center">Payment Details</h3>
 			<hr>
 			
 			<br>

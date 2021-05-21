@@ -41,7 +41,8 @@ public class InsertUserServlet extends HttpServlet {
 			User newUser = new User(accountNum,name,phoneNum,cvc,expDate,amount);
 			
 			CreateUser.insertUser(newUser);
-			response.sendRedirect("list");
+			response.sendRedirect("user-form.jsp");
+			
 			}catch(Exception e){
 				System.out.println("meka thamai error eka:"+e);
 			}
