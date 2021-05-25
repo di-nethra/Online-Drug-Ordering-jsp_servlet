@@ -15,7 +15,7 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-    <script src="validation.js"></script>
+    <script src="G:\jsp_servlets\Online Drug Ordering System\WebContent\JS\validation.js"></script>
 
 </head>
 <body>
@@ -46,27 +46,6 @@
     </div> 
     </div>
     
-    <script >
-
-    function checkpassword(){
-
-
-        var pass=document.getElementById('pass').value;
-
-
-    if(pass=='abc123'){
-
-    alert("succuss");
-    return true;
-    }
-
-    else{
-        alert("password failed");
-       return false;
-    }
-
-    }
-    
-    </script>
+  
 </body>
 </html>

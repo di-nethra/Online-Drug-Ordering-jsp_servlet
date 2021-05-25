@@ -1,5 +1,6 @@
 package model;
 
+
 public class User {
 	
 	private int id;
@@ -96,8 +97,7 @@ public class User {
 		this.amount = amount;
 	}
 
-
-
+	
 
 
 	

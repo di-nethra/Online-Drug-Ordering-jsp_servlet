@@ -13,66 +13,15 @@
     <script src="https://kit.fontawesome.com/ea06263aef.js" crossorigin="anonymous"></script>
     
     <!-- css -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="G:\jsp_servlets\Online Drug Ordering System\WebContent\styles\styles.css">
 </head>
 <body >
-<style>
 
-.bg-tild{
-    background: #2BA08D;
-    padding:25px 100px ;
-}
-.nav-link{
-    font-size:large;
-   
-}
-
-.form-inline{
-    padding-right:450px;
-}
-
-.dropdown{
-    padding-right:80px
-}
-.logo{
-    width:100px;
-    margin-right:15px;
-}
-
-.footerlinks{
-    padding-top:10px;
-    padding-right:100px ;
-}
-
-.footerimg{
-    width:200;
-    padding-left:110px ;
-}
-
-.nav-item{
-    padding-left:5px;
-    font-family:'Roboto', sans-serif;
-}
-
-.navbar-brand{
-    font-size:30px;
-    font-family:'Roboto', sans-serif;
-}
-
-.nav-link{
-    color: red;
-}
-
-.message{
-    padding:10px 20px ;
-}
-
-</style>
 	<header>
 	
 	
 	   <nav class="navbar navbar-expand-lg navbar-dark bg-tild ">
-  <img class="logo" src="G:\jsp_servlets\Online Drug Ordering System\WebContent\suwasetha2.png">
+  <img class="logo" src="G:\jsp_servlets\Online Drug Ordering System\WebContent\images\suwasetha2.png">
     <a href="" class="title navbar-brand font-weight-bold">Suwasetha</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#target1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toogle Navbar" >
         <span class="navbar-toggler-icon"></span>

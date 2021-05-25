@@ -6,9 +6,11 @@
 		http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>Online payments</display-name>
-	
 
-   
+   <welcome-file-list>
+        <welcome-file>Home.jsp</welcome-file>
+    </welcome-file-list> 
+
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>
 		<location>/Error.jsp</location>
