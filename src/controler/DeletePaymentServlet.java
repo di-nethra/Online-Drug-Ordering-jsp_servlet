@@ -17,7 +17,7 @@ import model.DeletePayment;
 @WebServlet("/DeletePaymentServlet")
 public class DeletePaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private DeletePayment DeleteUser=new DeletePayment();
+	private DeletePayment DeletePayment=new DeletePayment();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,7 +33,7 @@ public class DeletePaymentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
-			DeleteUser.deleteUser(id);
+			DeletePayment.deleteUser(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

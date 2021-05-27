@@ -1,43 +1,38 @@
 package model;
 
-public class Payment {
+public class Payment extends User {
 	
+	//declaring varibles
 	private int id;
 	private String accountNumber;
-	private String name;
-	private String phoneNumber;
 	private String cvc;
 	private String expDate;
 	private int amount;
 	
-	
-	public Payment() {
+	//creating and initialising the overloaded constructor
+	public Payment(int id, String accountNumber,String name, String phoneNumber,String cvc,String expDate, int amount){
 		
-	}
-		
-	public Payment(int id, String accountNumber, String name, String phoneNumber, String cvc, String expDate,
-			int amount) {
+		super(name, phoneNumber);
 		
 		this.id = id;
 		this.accountNumber = accountNumber;
-		this.name = name;
-		this.phoneNumber = phoneNumber;
 		this.cvc = cvc;
 		this.expDate = expDate;
 		this.amount = amount;
 	}
 
-
-	public Payment(String accountNumber, String name, String phoneNumber , String cvc, String expDate,
-			int amount) {
-		super();
+	//creating and initialising the overloaded constructor
+	public Payment( String accountNumber,String name, String phoneNumber,String cvc,String expDate, int amount){
+		
+		
+		super(name, phoneNumber);
+		
 		this.accountNumber = accountNumber;
-		this.name = name;
-		this.phoneNumber = phoneNumber;
 		this.cvc = cvc;
 		this.expDate = expDate;
 		this.amount = amount;
 	}
+			
 
 	public int getId() {
 		return id;
@@ -54,21 +49,16 @@ public class Payment {
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-
+	
+	//overided method
 	public String getName() {
-		return name;
+	
+		return super.getName();
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
+	//overided method
 	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		return super.getPhoneNumber();
 	}
 
 	public String getCvc() {

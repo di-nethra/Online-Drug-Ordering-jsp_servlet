@@ -19,7 +19,7 @@ import model.Payment;
 public class ViewEditPaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private SelectPayment SelectUser=new SelectPayment();
+	private SelectPayment SelectPayment=new SelectPayment();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,7 +35,7 @@ public class ViewEditPaymentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		int id = Integer.parseInt(request.getParameter("id"));
-		Payment existingUser = SelectUser.selectUser(id);
+		Payment existingUser = SelectPayment.selectUser(id);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("user-form.jsp");
 		request.setAttribute("user", existingUser);
 		dispatcher.forward(request, response);

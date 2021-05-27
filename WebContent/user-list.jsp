@@ -17,7 +17,7 @@
     <script src="https://kit.fontawesome.com/ea06263aef.js" crossorigin="anonymous"></script>
     
     <!-- css -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="G:\jsp_servlets\Online Drug Ordering System\WebContent\styles\styles.css">
     
     
 </head>

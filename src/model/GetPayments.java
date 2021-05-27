@@ -18,17 +18,18 @@ public class GetPayments extends PaymentDbConnection {
 
 	public List<Payment> selectAllUsers() {
 
-		List<Payment> users = new ArrayList<>();
-		//Establishing a Connection
+		List<Payment> payments = new ArrayList<>();
+		//creating a Connection
 		try (Connection connection = getConnection();
 
-				//Create a statement using connection object
+				//Create a statement
 			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
 			System.out.println(preparedStatement);
-			// Step 3: Execute the query or update query
+			
+			//Execute the query
 			ResultSet rs = preparedStatement.executeQuery();
 
-			// Step 4: Process the ResultSet object.
+			// Process ResultSet object
 			while (rs.next()) {try {
 				int id = rs.getInt("id");
 				String accountNumber=rs.getString("accountNumber");
@@ -37,7 +38,7 @@ public class GetPayments extends PaymentDbConnection {
 				String cvc = rs.getString("cvc");
 				String expDate = rs.getString("expDate");
 				int amount = rs.getInt("amount");
-				users.add(new Payment(id,accountNumber,name,phoneNumber,cvc,expDate,amount));
+				 payments.add(new Payment(id,accountNumber,name,phoneNumber,cvc,expDate,amount));
 			}catch(Exception e) {
 				System.out.println("get users error");
 			}
@@ -46,7 +47,7 @@ public class GetPayments extends PaymentDbConnection {
 		} catch (SQLException e) {
 			printSQLException(e);
 		}
-		return users;
+		return payments;
 	}
 	
 	private void printSQLException(SQLException ex) {

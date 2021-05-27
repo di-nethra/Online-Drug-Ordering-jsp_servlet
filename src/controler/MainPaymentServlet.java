@@ -26,7 +26,7 @@ public class MainPaymentServlet extends HttpServlet {
 		try {
 			switch (action) {
 			case "/new":
-				ShowNewForm(request, response);
+				ViewNewPayment(request, response);
 				break;
 			case "/insert":
 				insertPayment(request, response);
@@ -35,32 +35,32 @@ public class MainPaymentServlet extends HttpServlet {
 				deletePayment(request, response);
 				break;
 			case "/edit":
-				showEditForm(request, response);
+				ViewEditPayment(request, response);
 				break;
 			case "/update":
 				updatePayment(request, response);
 				break;
 			default:
-				listUser(request, response);
+				ListPayment(request, response);
 				break;
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
 		}
 	}
-	private void ShowNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void ViewNewPayment(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ViewNewPaymentServlet");
 		dispatcher.forward(request, response);
 		
 	}
-	private void listUser(HttpServletRequest request, HttpServletResponse response)
+	private void ListPayment(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ListPaymentServlet");
 		dispatcher.forward(request, response);
 	}
 
-	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+	private void ViewEditPayment(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ViewEditPaymentServlet");

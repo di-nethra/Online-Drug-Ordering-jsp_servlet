@@ -13,17 +13,18 @@ public class SelectPayment extends PaymentDbConnection {
 	private static final String SELECT_USER_BY_ID = "select id,accountNumber,name,phoneNumber,cvc,expDate,amount from user_detail where id =?";
 	
 	public Payment selectUser(int id) {
-		Payment user = null;
-		// Step 1: Establishing a Connection
+		Payment payment = null;
+		//creating a Connection
 		try (Connection connection = getConnection();
-				// Step 2:Create a statement using connection object
+				//Create a statement
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);) {
 			preparedStatement.setInt(1, id);
 			System.out.println(preparedStatement);
-			// Step 3: Execute the query or update query
+			//Execute the query
 			ResultSet rs = preparedStatement.executeQuery();
 
-			// Step 4: Process the ResultSet object.
+			//Process ResultSet object
+			
 			while (rs.next()) {
 				
 				String accountNumber = rs.getString("accountNumber");
@@ -32,12 +33,12 @@ public class SelectPayment extends PaymentDbConnection {
 				String cvc = rs.getString("cvc");
 				String expDate = rs.getString("expDate");
 				int amount = rs.getInt("amount");
-				user = new Payment(id,accountNumber,name,phoneNumber,cvc,expDate,amount);
+				payment = new Payment(id,accountNumber,name,phoneNumber,cvc,expDate,amount);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
 		}
-		return user;
+		return payment;
 	}
 	
 	

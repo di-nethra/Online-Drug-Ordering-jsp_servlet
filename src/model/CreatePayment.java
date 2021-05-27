@@ -14,8 +14,9 @@ public class CreatePayment extends PaymentDbConnection  {
 
 	public void insertUser(Payment user) throws SQLException {
 		System.out.println(INSERT_USERS_SQL);
-		// try-with-resource statement will auto close the connection.
+		//creating a Connection
 		try (Connection connection = getConnection();
+				//Create a statement
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
 			
 			preparedStatement.setString(1,user.getAccountNumber());
@@ -26,6 +27,8 @@ public class CreatePayment extends PaymentDbConnection  {
 			preparedStatement.setInt(6,user.getAmount());
 			
 			System.out.println("this is from create user:"+preparedStatement);
+			
+			//Execute the update
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			printSQLException(e);

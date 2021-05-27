@@ -16,7 +16,7 @@ import model.Payment;
 @WebServlet("/InsertPaymentServlet")
 public class InsertPaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CreatePayment CreateUser=new CreatePayment();
+	private CreatePayment CreatePayment=new CreatePayment();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -40,7 +40,7 @@ public class InsertPaymentServlet extends HttpServlet {
 			int amount =Integer.parseInt (request.getParameter("amount"));
 			Payment newUser = new Payment(accountNum,name,phoneNum,cvc,expDate,amount);
 			
-			CreateUser.insertUser(newUser);
+			CreatePayment.insertUser(newUser);
 			response.sendRedirect("user-form.jsp");
 			
 			}catch(Exception e){

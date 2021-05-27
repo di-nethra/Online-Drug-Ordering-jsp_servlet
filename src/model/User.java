@@ -1,105 +1,73 @@
 package model;
 
-
 public class User {
 	
-	private int id;
-	private String accountNumber;
+	
+	//declaring varibles
 	private String name;
 	private String phoneNumber;
-	private String cvc;
-	private String expDate;
-	private int amount;
+	private String NIC;
+	private int age;
 	
 	
-	public User() {
+	//creating and initialising the overloaded constructor
+	public User(String name, String phoneNumber) {
 		
-	}
-		
-	public User(int id, String accountNumber, String name, String phoneNumber, String cvc, String expDate,
-			int amount) {
-		
-		this.id = id;
-		this.accountNumber = accountNumber;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
-		this.cvc = cvc;
-		this.expDate = expDate;
-		this.amount = amount;
+		
 	}
-
-
-
-	public User(String accountNumber, String name, String phoneNumber , String cvc, String expDate,
-			int amount) {
-		super();
-		this.accountNumber = accountNumber;
+	
+	//creating and initialising the overloaded constructor
+	public User(String name, String phoneNumber, String nIC, int age) {
+		
 		this.name = name;
 		this.phoneNumber = phoneNumber;
-		this.cvc = cvc;
-		this.expDate = expDate;
-		this.amount = amount;
+		NIC = nIC;
+		this.age = age;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
-	}
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getCvc() {
-		return cvc;
+
+	public String getNIC() {
+		return NIC;
 	}
 
-	public void setCvc(String cvc) {
-		this.cvc = cvc;
+
+	public void setNIC(String nIC) {
+		NIC = nIC;
 	}
 
-	public String getExpDate() {
-		return expDate;
+
+	public int getAge() {
+		return age;
 	}
 
-	public void setExpDate(String expDate) {
-		this.expDate = expDate;
-	}
 
-	public int getAmount() {
-		return amount;
+	public void setAge(int age) {
+		this.age = age;
 	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
-
 	
-
-
+	
 	
 
 }

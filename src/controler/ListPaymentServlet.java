@@ -20,7 +20,7 @@ import model.Payment;
 public class ListPaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private GetPayments GetUsers=new GetPayments();
+	private GetPayments GetPayments=new GetPayments();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -36,7 +36,7 @@ public class ListPaymentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-		List<Payment> listUser = GetUsers.selectAllUsers();
+		List<Payment> listUser = GetPayments.selectAllUsers();
 		request.setAttribute("listUser", listUser);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
 		dispatcher.forward(request, response);
