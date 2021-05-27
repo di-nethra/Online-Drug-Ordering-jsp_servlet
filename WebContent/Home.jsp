@@ -4,90 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-
-
-<style>
-
-.bg-tild{
-    background: #2BA08D;
-    padding:25px 100px ;
-}
-.nav-link{
-    font-size:large;
-   
-}
-
-.form-inline{
-    padding-right:450px;
-}
-
-.dropdown{
-    padding-right:80px
-}
-.logo{
-    width:70px;
-    margin-right:15px;
-}
-
-.footerlinks{
-    padding-top:10px;
-    padding-right:100px ;
-}
-
-.footerimg{
-    width:200;
-    padding-left:110px ;
-}
-
-.nav-item{
-    padding-left:5px;
-    font-family:'Roboto', sans-serif;
-}
-
-.navbar-brand{
-    font-size:30px;
-    font-family:'Roboto', sans-serif;
-}
-
-.nav-link{
-    color: red;
-}
-
-.message{
-    padding:10px 20px ;
-}
-
-.click{
-
-    margin-top:100px;
-}
-
-.secondcontent{
-
-    margin-top: 100px;
-}
-
-.carousalimg{
-
-    width:1520px;
-    height:500px;
-
-
-}
-
-
-
-</style>
-
-</head>
-<body>
-
-<!DOCTYPE html>
-
-<html>
-<head>
-  <title>ONLINE PAYMENTS</title>
+<title>Suwasetha Home</title>
+ 
    <!-- bootstrapCDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -96,16 +14,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <!-- googlefonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/ea06263aef.js" crossorigin="anonymous"></script>
     
     <!-- css -->
-    <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="G:\jsp_servlets\Online Drug Ordering System\WebContent\styles\styles.css">
 </head>
+
 
 <body>
    <section id="hero">
@@ -145,7 +61,7 @@
 <!-- #2BA08D -->
 
 <section id="carousel">
-  <div id="dinethrexcalousel" class="carousel slide" data-ride="carousel" data-interval="2500">
+  <div id="dinethrexcalousel" class="carousel slide" data-ride="carousel" data-interval="1500">
     <div class="carousel-inner">
       <div class="carousel-item active">
           <img class="carousalimg" src="G:\jsp_servlets\Online Drug Ordering System\WebContent\images\image1.jpg" alt="4">
@@ -373,19 +289,19 @@
     </div>
     <section class="mb-4">
 
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
           ><i class="fab fa-facebook-f"></i
         ></a>
   
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
           ><i class="fab fa-twitter"></i
         ></a>
   
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
           ><i class="fab fa-google"></i
         ></a>
   
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
           ><i class="fab fa-instagram"></i
         ></a>
       
@@ -402,6 +318,3 @@
 </body>
 </html>
 
-
-</body>
-</html>

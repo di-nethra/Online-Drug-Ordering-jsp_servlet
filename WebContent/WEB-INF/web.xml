@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<element>
+
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
@@ -16,4 +16,3 @@
 		<location>/Error.jsp</location>
 	</error-page>
 </web-app>
-</element>

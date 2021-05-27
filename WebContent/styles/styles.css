@@ -15,7 +15,7 @@
     padding-right:80px
 }
 .logo{
-    width:100px;
+    width:70px;
     margin-right:15px;
 }
 
@@ -39,9 +39,7 @@
     font-family:'Roboto', sans-serif;
 }
 
-.nav-link{
-    color: red;
-}
+
 
 .message{
     padding:10px 20px ;
@@ -64,3 +62,21 @@ padding-right:100px ;
 .bank{
     height: 800px;;
 }
+
+.click{
+    margin-top:100px;
+}
+
+.admin{
+	
+	margin-top:100px;
+	
+}
+.secondcontent{
+    margin-top: 100px;
+}
+.carousalimg{
+    width:1520px;
+    height:500px;
+}
+
